@@ -1,0 +1,500 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: μVision V5.24.2.0
+Copyright (C) 2017 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Turin S, CN.IC, LIC=YA39U-S8B4L-Y8UFK-ZNF85-1XVRK-YFUBP
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Plus  Version: 5.24.1
+Toolchain Path:  D:\keil5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 5 (build 528)
+Assembler:       Armasm.exe V5.06 update 5 (build 528)
+Linker/Locator:  ArmLink.exe V5.06 update 5 (build 528)
+Library Manager: ArmAr.exe V5.06 update 5 (build 528)
+Hex Converter:   FromElf.exe V5.06 update 5 (build 528)
+CPU DLL:         SARMCM3.DLL V5.24.1
+Dialog DLL:      DCM.DLL V1.16.0.0
+Target DLL:      UL2CM3.DLL V1.160.3.0
+Dialog DLL:      TCM.DLL V1.32.0.0
+ 
+<h2>Project:</h2>
+D:\5_stm32_project\6-9 无刷电机编码器测速\User\Turin.uvprojx
+Project File Date:  04/21/2024
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 5 (build 528)', folder: 'D:\keil5\ARM\ARMCC\Bin'
+Build target 'Turin'
+compiling Key.c...
+..\Driver\Key.c(6): warning:  #223-D: function "RCC_APB2PeriphClockCmd" declared implicitly
+  	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB,ENABLE);
+..\Driver\Key.c(6): error:  #20: identifier "RCC_APB2Periph_GPIOB" is undefined
+  	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB,ENABLE);
+..\Driver\Key.c(7): error:  #20: identifier "GPIO_InitTypeDef" is undefined
+  	GPIO_InitTypeDef GPIO_InitStructure; //结构体类型(已经定义好的） 结构体变量名 ->结构体变量的定义
+..\Driver\Key.c(8): error:  #20: identifier "GPIO_Speed_50MHz" is undefined
+  	GPIO_InitStructure.GPIO_Speed=GPIO_Speed_50MHz;
+..\Driver\Key.c(9): error:  #20: identifier "GPIO_Pin_1" is undefined
+  	GPIO_InitStructure.GPIO_Pin=GPIO_Pin_1|GPIO_Pin_11;
+..\Driver\Key.c(9): error:  #20: identifier "GPIO_Pin_11" is undefined
+  	GPIO_InitStructure.GPIO_Pin=GPIO_Pin_1|GPIO_Pin_11;
+..\Driver\Key.c(10): error:  #20: identifier "GPIO_Mode_IPU" is undefined
+  	GPIO_InitStructure.GPIO_Mode=GPIO_Mode_IPU;
+..\Driver\Key.c(11): warning:  #223-D: function "GPIO_Init" declared implicitly
+  	GPIO_Init(GPIOB,&GPIO_InitStructure);
+..\Driver\Key.c(17): warning:  #223-D: function "GPIO_ReadInputDataBit" declared implicitly
+  	if(GPIO_ReadInputDataBit(GPIOB,GPIO_Pin_11)==0)
+..\Driver\Key.c(17): error:  #20: identifier "GPIO_Pin_11" is undefined
+  	if(GPIO_ReadInputDataBit(
+PIOB,GPIO_Pin_11)==0)
+..\Driver\Key.c(24): warning:  #223-D: function "GPIO_ReadInputDataBit" declared implicitly
+  	if(GPIO_ReadInputDataBit(GPIOB,GPIO_Pin_1)==0)
+..\Driver\Key.c(24): error:  #20: identifier "GPIO_Pin_1" is undefined
+  	if(GPIO_ReadInputDataBit(
+PIOB,GPIO_Pin_1)==0)
+..\Driver\Key.c: 4 warnings, 8 errors
+compiling Encoder.c...
+..\Driver\Encoder.c(6): warning:  #223-D: function "RCC_APB1PeriphClockCmd" declared implicitly
+  	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3,ENABLE);//开启TIM2时钟	
+..\Driver\Encoder.c(6): error:  #20: identifier "RCC_APB1Periph_TIM3" is undefined
+  	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3,ENABLE);//开启TIM2时钟	
+..\Driver\Encoder.c(7): warning:  #223-D: function "RCC_APB2PeriphClockCmd" declared implicitly
+  	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA,ENABLE);
+..\Driver\Encoder.c(7): error:  #20: identifier "RCC_APB2Periph_GPIOA" is undefined
+  	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA,ENABLE);
+..\Driver\Encoder.c(9): error:  #20: identifier "GPIO_InitTypeDef" is undefined
+  	GPIO_InitTypeDef GPIO_InitStructure; //结构体类型(已经定义好的） 结构体变量名 ->结构体变量的定义
+..\Driver\Encoder.c(10): error:  #20: identifier "GPIO_Speed_50MHz" is undefined
+  	GPIO_InitStructure.GPIO_Speed=GPIO_Speed_50MHz;
+..\Driver\Encoder.c(11): error:  #20: identifier "GPIO_Pin_6" is undefined
+  	GPIO_InitStructure.GPIO_Pin=GPIO_Pin_6|GPIO_Pin_7;	
+..\Driver\Encoder.c(11): error:  #20: identifier "GPIO_Pin_7" is undefined
+  	GPIO_InitStructure.GPIO_Pin=GPIO_Pin_6|GPIO_Pin_7;	
+..\Driver\Encoder.c(12): error:  #20: identifier "GPIO_Mode_IPU" is undefined
+  	GPIO_InitStructure.GPIO_Mode=GPIO_Mode_IPU;//上拉输入
+..\Driver\Encoder.c(13): warning:  #223-D: function "GPIO_Init" declared implicitly
+  	GPIO_Init(GPIOA,&GPIO_InitStructure);
+..\Driver\Encoder.c(16): warning:  #223-D: function "TIM_InternalClockConfig" declared implicitly
+  	TIM_InternalClockConfig(TIM3);//定时器上电后默认使用内部时钟,此语句也可以不写
+..\Driver\Encoder.c(18): error:  #20: identifier "TIM_TimeBaseInitTypeDef" is undefined
+  	TIM_TimeBaseInitTypeDef TIM_TimeBaseInitStructure;
+..\Driver\Encoder.c(19): error:  #20: identifier "TIM_CKD_DIV1" is undefined
+  	TIM_TimeBaseInitStructure.TIM_ClockDivision =  TIM_CKD_DIV1 ;//1分频
+..\Driver\Encoder.c(20): error:  #20: identifier "TIM_CounterMode_Up" is undefined
+  	TIM_TimeBaseInitStructure.TIM_CounterMode = TIM_CounterMode_Up;//向上计数
+..\Driver\Encoder.c(24): warning:  #223-D: function "TIM_TimeBaseInit" declared implicitly
+  	TIM_TimeBaseInit(TIM3,&TIM_TimeBaseInitStructure);//时基单元初始化
+..\Driver\Encoder.c(28): error:  #20: identifier "TIM_ICInitTypeDef" is undefined
+  	TIM_ICInitTypeDef TIM_ICInitStructure;
+..\Driver\Encoder.c(29): warning:  #223-D: function "TIM_ICStructInit" declared implicitly
+      TIM_ICStructInit(&TIM_ICInitStructure);//给结构体赋初始值，防止出现不确定的状态
+..\Driver\Encoder.c(30): error:  #20: identifier "TIM_Channel_1" is undefined
+  	TIM_ICInitStructure.TIM_Channel=TIM_Channel_1;//输入捕获通道选择
+..\Driver\Encoder.c(33): warning:  #223-D: function "TIM_ICInit" declared implicitly
+  	TIM_ICInit(TIM3,&TIM_ICInitStructure);
+..\Driver\Encoder.c(35): error:  #20: identifier "TIM_Channel_2" is undefined
+  	TIM_ICInitStructure.TIM_Channel=TIM_Channel_2;//输入捕获通道选择
+..\Driver\Encoder.c(41): warning:  #223-D: function "TIM_EncoderInterfaceConfig" declared implicitly
+      TIM_EncoderInterfaceConfig(TIM3,TIM_EncoderMode_TI12,TIM_ICPolarity_Rising,TIM_ICPolarity_Rising);//定时器3 ，T1T2同时使用，极性相同(上升沿/下降沿两个都是有效的)，即为正相
+..\Driver\Encoder.c(41): error:  #20: identifier "TIM_EncoderMode_TI12" is undefined
+      TIM_EncoderInterfaceConfig(
+IM3,TIM_EncoderMode_TI12,TIM_ICPolarity_Rising,TIM_ICPolarity_Rising);//定时器3 ，T1T2同时使用，极性相同(上升沿/下降沿两个都是有效的)，即为正相
+..\Driver\Encoder.c(41): error:  #20: identifier "TIM_ICPolarity_Rising" is undefined
+      TIM_EncoderInterfaceConfig(
+IM3,TIM_EncoderMode_TI12,TIM_ICPolarity_Rising,TIM_ICPolarity_Rising);//定时器3 ，T1T2同时使用，极性相同(上升沿/下降沿两个都是有效的)，即为正相
+..\Driver\Encoder.c(43): warning:  #223-D: function "TIM_Cmd" declared implicitly
+  	TIM_Cmd(TIM3,ENABLE);//启动定时器
+..\Driver\Encoder.c(48): warning:  #223-D: function "TIM_GetCounter" declared implicitly
+  	return TIM_GetCounter(TIM3);
+..\Driver\Encoder.c(54): warning:  #223-D: function "TIM_GetCounter" declared implicitly
+  	Temp = TIM_GetCounter(TIM3);
+..\Driver\Encoder.c(55): warning:  #223-D: function "TIM_SetCounter" declared implicitly
+  	TIM_SetCounter(TIM3,0);
+..\Driver\Encoder.c(57): warning:  #1-D: last line of file ends without a newline
+  }
+..\Driver\Encoder.c: 13 warnings, 15 errors
+compiling Motor.c...
+..\Driver\PWM.h(6): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\Driver\Motor.c(10): warning:  #223-D: function "RCC_APB2PeriphClockCmd" declared implicitly
+  	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA,ENABLE);
+..\Driver\Motor.c(10): error:  #20: identifier "RCC_APB2Periph_GPIOA" is undefined
+  	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA,ENABLE);
+..\Driver\Motor.c(11): error:  #20: identifier "GPIO_InitTypeDef" is undefined
+  	GPIO_InitTypeDef GPIO_InitStructure; //结构体类型(已经定义好的） 结构体变量名 ->结构体变量的定义
+..\Driver\Motor.c(12): error:  #20: identifier "GPIO_Speed_50MHz" is undefined
+  	GPIO_InitStructure.GPIO_Speed=GPIO_Speed_50MHz;
+..\Driver\Motor.c(13): error:  #20: identifier "GPIO_Pin_8" is undefined
+  	GPIO_InitStructure.GPIO_Pin=
+OGIC1|LOGIC2;
+..\Driver\Motor.c(13): error:  #20: identifier "GPIO_Pin_9" is undefined
+  	GPIO_InitStructure.GPIO_Pin=
+OGIC1|
+OGIC2;
+..\Driver\Motor.c(14): error:  #20: identifier "GPIO_Mode_Out_PP" is undefined
+  	GPIO_InitStructure.GPIO_Mode=GPIO_Mode_Out_PP;
+..\Driver\Motor.c(15): warning:  #223-D: function "GPIO_Init" declared implicitly
+  	GPIO_Init(GPIOA,&GPIO_InitStructure);
+..\Driver\Motor.c(16): warning:  #223-D: function "GPIO_SetBits" declared implicitly
+  	GPIO_SetBits(GPIOA,LOGIC1|LOGIC2);//初始化默认低电平输出，所以要置高电平
+..\Driver\Motor.c(31): warning:  #1-D: last line of file ends without a newline
+  }
+..\Driver\Motor.c: 5 warnings, 6 errors
+compiling OLED.c...
+..\Driver\OLED.c(11): warning:  #223-D: function "RCC_APB2PeriphClockCmd" declared implicitly
+      RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE);
+..\Driver\OLED.c(11): error:  #20: identifier "RCC_APB2Periph_GPIOB" is undefined
+      RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE);
+..\Driver\OLED.c(13): error:  #20: identifier "GPIO_InitTypeDef" is undefined
+  	GPIO_InitTypeDef GPIO_InitStructure;
+..\Driver\OLED.c(14): error:  #20: identifier "GPIO_Mode_Out_OD" is undefined
+   	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_OD;
+..\Driver\OLED.c(15): error:  #20: identifier "GPIO_Speed_50MHz" is undefined
+  	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+..\Driver\OLED.c(16): error:  #20: identifier "GPIO_Pin_8" is undefined
+  	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_8;
+..\Driver\OLED.c(17): warning:  #223-D: function "GPIO_Init" declared implicitly
+   	GPIO_Init(GPIOB, &GPIO_InitStructure);
+..\Driver\OLED.c(18): error:  #20: identifier "GPIO_Pin_9" is undefined
+  	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_9;
+..\Driver\OLED.c(21): warning:  #223-D: function "GPIO_WriteBit" declared implicitly
+  	
+LED_W_SCL(1);
+..\Driver\OLED.c(21): error:  #20: identifier "BitAction" is undefined
+  	
+LED_W_SCL(1);
+..\Driver\OLED.c(32): warning:  #223-D: function "GPIO_WriteBit" declared implicitly
+  	
+LED_W_SDA(1);
+..\Driver\OLED.c(32): error:  #20: identifier "GPIO_Pin_9" is undefined
+  	
+LED_W_SDA(1);
+..\Driver\OLED.c(32): error:  #20: identifier "BitAction" is undefined
+  	
+LED_W_SDA(1);
+..\Driver\OLED.c(33): error:  #20: identifier "GPIO_Pin_8" is undefined
+  	
+LED_W_SCL(1);
+..\Driver\OLED.c(45): warning:  #223-D: function "GPIO_WriteBit" declared implicitly
+  	
+LED_W_SDA(0);
+..\Driver\OLED.c(45): error:  #20: identifier "GPIO_Pin_9" is undefined
+  	
+LED_W_SDA(0);
+..\Driver\OLED.c(45): error:  #20: identifier "BitAction" is undefined
+  	
+LED_W_SDA(0);
+..\Driver\OLED.c(46): error:  #20: identifier "GPIO_Pin_8" is undefined
+  	
+LED_W_SCL(1);
+..\Driver\OLED.c(60): warning:  #223-D: function "GPIO_WriteBit" declared implicitly
+  		
+LED_W_SDA(Byte & (0x80 >> i));
+..\Driver\OLED.c(60): error:  #20: identifier "GPIO_Pin_9" is undefined
+  		
+LED_W_SDA(Byte & (0x80 >> i));
+..\Driver\OLED.c(60): error:  #20: identifier "BitAction" is undefined
+  		
+LED_W_SDA(Byte & (0x80 >> i));
+..\Driver\OLED.c(61): error:  #20: identifier "GPIO_Pin_8" is undefined
+  		
+LED_W_SCL(1);
+..\Driver\OLED.c(64): warning:  #223-D: function "GPIO_WriteBit" declared implicitly
+  	
+LED_W_SCL(1);	//棰濆鐨勪竴涓椂閽燂紝涓嶅鐞嗗簲绛斾俊鍙?
+..\Driver\OLED.c(64): error:  #20: identifier "GPIO_Pin_8" is undefined
+  	
+LED_W_SCL(1);	//棰濆鐨勪竴涓椂閽燂紝涓嶅鐞嗗簲绛斾俊鍙?
+..\Driver\OLED.c(64): error:  #20: identifier "BitAction" is undefined
+  	
+LED_W_SCL(1);	//棰濆鐨勪竴涓椂閽燂紝涓嶅鐞嗗簲绛斾俊鍙?
+..\Driver\OLED.c: 7 warnings, 18 errors
+compiling Timer.c...
+..\Driver\Timer.c(6): warning:  #223-D: function "RCC_APB1PeriphClockCmd" declared implicitly
+  	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2,ENABLE);//开启TIM2时钟
+..\Driver\Timer.c(6): error:  #20: identifier "RCC_APB1Periph_TIM2" is undefined
+  	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2,ENABLE);//开启TIM2时钟
+..\Driver\Timer.c(9): warning:  #223-D: function "TIM_InternalClockConfig" declared implicitly
+  	TIM_InternalClockConfig(TIM2);//定时器上电后默认使用内部时钟,此语句也可以不写
+..\Driver\Timer.c(11): error:  #20: identifier "TIM_TimeBaseInitTypeDef" is undefined
+  	TIM_TimeBaseInitTypeDef TIM_TimeBaseInitStructure;
+..\Driver\Timer.c(12): error:  #20: identifier "TIM_CKD_DIV1" is undefined
+  	TIM_TimeBaseInitStructure.TIM_ClockDivision =  TIM_CKD_DIV1 ;//1分频
+..\Driver\Timer.c(13): error:  #20: identifier "TIM_CounterMode_Up" is undefined
+  	TIM_TimeBaseInitStructure.TIM_CounterMode = TIM_CounterMode_Up;//向上计数
+..\Driver\Timer.c(20): warning:  #223-D: function "TIM_TimeBaseInit" declared implicitly
+  	TIM_TimeBaseInit(TIM2,&TIM_TimeBaseInitStructure);//时基单元初始化
+..\Driver\Timer.c(22): warning:  #223-D: function "TIM_ClearFlag" declared implicitly
+  	TIM_ClearFlag(TIM2,TIM_FLAG_Update);//2-->手动清理中断标志位
+..\Driver\Timer.c(22): error:  #20: identifier "TIM_FLAG_Update" is undefined
+  	TIM_ClearFlag(
+IM2,TIM_FLAG_Update);//2-->手动清理中断标志位
+..\Driver\Timer.c(24): warning:  #223-D: function "TIM_ITConfig" declared implicitly
+  	TIM_ITConfig(TIM2,TIM_IT_Update,ENABLE);//中断配置，选择更新中断,使能
+..\Driver\Timer.c(24): error:  #20: identifier "TIM_IT_Update" is undefined
+  	TIM_ITConfig(
+IM2,TIM_IT_Update,ENABLE);//中断配置，选择更新中断,使能
+..\Driver\Timer.c(26): warning:  #223-D: function "NVIC_PriorityGroupConfig" declared implicitly
+  	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
+..\Driver\Timer.c(26): error:  #20: identifier "NVIC_PriorityGroup_2" is undefined
+  	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
+..\Driver\Timer.c(28): error:  #20: identifier "NVIC_InitTypeDef" is undefined
+  	NVIC_InitTypeDef NVIC_InitStructure;
+..\Driver\Timer.c(34): warning:  #223-D: function "NVIC_Init" declared implicitly
+  	NVIC_Init(&NVIC_InitStructure);//定时器初始化
+..\Driver\Timer.c(36): warning:  #223-D: function "TIM_Cmd" declared implicitly
+  	TIM_Cmd(TIM2,ENABLE);//启动定时器
+..\Driver\Timer.c(47): warning:  #1-D: last line of file ends without a newline
+  */
+..\Driver\Timer.c: 9 warnings, 8 errors
+compiling main.c...
+..\Driver\Encoder.h(6): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\Driver\Timer.h(5): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\Driver\Motor.h(5): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\Driver\Key.h(6): warning:  #1-D: last line of file ends without a newline
+  #endif
+main.c(48): warning:  #223-D: function "TIM_GetITStatus" declared implicitly
+  	if (TIM_GetITStatus(TIM2,TIM_IT_Update) == SET)//获取中断标志位，参数：定时器2，检测更新标志位
+main.c(48): error:  #20: identifier "TIM_IT_Update" is undefined
+  	if (TIM_GetITStatus(
+IM2,TIM_IT_Update) == SET)//获取中断标志位，参数：定时器2，检测更新标志位
+main.c(52): warning:  #223-D: function "TIM_ClearITPendingBit" declared implicitly
+  		TIM_ClearITPendingBit(TIM2,TIM_IT_Update);//清除标志位
+main.c: 6 warnings, 1 error
+compiling LED.c...
+..\Driver\LED.c(10): warning:  #223-D: function "RCC_APB2PeriphClockCmd" declared implicitly
+  	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA,ENABLE);
+..\Driver\LED.c(10): error:  #20: identifier "RCC_APB2Periph_GPIOA" is undefined
+  	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA,ENABLE);
+..\Driver\LED.c(11): error:  #20: identifier "GPIO_InitTypeDef" is undefined
+  	GPIO_InitTypeDef GPIO_InitStructure; //结构体类型(已经定义好的） 结构体变量名 ->结构体变量的定义
+..\Driver\LED.c(12): error:  #20: identifier "GPIO_Speed_50MHz" is undefined
+  	GPIO_InitStructure.GPIO_Speed=GPIO_Speed_50MHz;
+..\Driver\LED.c(13): error:  #20: identifier "GPIO_Pin_All" is undefined
+  	GPIO_InitStructure.GPIO_Pin=GPIO_Pin_All;
+..\Driver\LED.c(14): error:  #20: identifier "GPIO_Mode_Out_PP" is undefined
+  	GPIO_InitStructure.GPIO_Mode=GPIO_Mode_Out_PP;
+..\Driver\LED.c(15): warning:  #223-D: function "GPIO_Init" declared implicitly
+  	GPIO_Init(GPIOA,&GPIO_InitStructure);
+..\Driver\LED.c(16): warning:  #223-D: function "GPIO_SetBits" declared implicitly
+  	GPIO_SetBits(GPIOA,GPIO_Pin_All);//初始化默认低电平输出，所以要置高电平
+..\Driver\LED.c(25): warning:  #223-D: function "GPIO_ResetBits" declared implicitly
+  	GPIO_ResetBits(GPIOA,GPIO_Pin_1);
+..\Driver\LED.c(25): error:  #20: identifier "GPIO_Pin_1" is undefined
+  	GPIO_ResetBits(
+PIOA,GPIO_Pin_1);
+..\Driver\LED.c(34): warning:  #223-D: function "GPIO_SetBits" declared implicitly
+  	GPIO_SetBits(GPIOA,GPIO_Pin_1);
+..\Driver\LED.c(34): error:  #20: identifier "GPIO_Pin_1" is undefined
+  	GPIO_SetBits(
+PIOA,GPIO_Pin_1);
+..\Driver\LED.c(43): warning:  #223-D: function "GPIO_ResetBits" declared implicitly
+  	GPIO_ResetBits(GPIOA,GPIO_Pin_2);
+..\Driver\LED.c(43): error:  #20: identifier "GPIO_Pin_2" is undefined
+  	GPIO_ResetBits(
+PIOA,GPIO_Pin_2);
+..\Driver\LED.c(52): warning:  #223-D: function "GPIO_SetBits" declared implicitly
+  	GPIO_SetBits(GPIOA,GPIO_Pin_2);
+..\Driver\LED.c(52): error:  #20: identifier "GPIO_Pin_2" is undefined
+  	GPIO_SetBits(
+PIOA,GPIO_Pin_2);
+..\Driver\LED.c(61): warning:  #223-D: function "GPIO_ReadOutputDataBit" declared implicitly
+  	if (GPIO_ReadOutputDataBit(GPIOA, GPIO_Pin_1)==0)
+..\Driver\LED.c(61): error:  #20: identifier "GPIO_Pin_1" is undefined
+  	if (GPIO_ReadOutputDataBit(
+PIOA, GPIO_Pin_1)==0)
+..\Driver\LED.c(63): warning:  #223-D: function "GPIO_SetBits" declared implicitly
+  		GPIO_SetBits(GPIOA,GPIO_Pin_1);
+..\Driver\LED.c(67): warning:  #223-D: function "GPIO_ResetBits" declared implicitly
+  		GPIO_ResetBits(GPIOA,GPIO_Pin_1);
+..\Driver\LED.c(77): warning:  #223-D: function "GPIO_ReadOutputDataBit" declared implicitly
+  	if (GPIO_ReadOutputDataBit(GPIOA, GPIO_Pin_2)==0)
+..\Driver\LED.c(77): error:  #20: identifier "GPIO_Pin_2" is undefined
+  	if (GPIO_ReadOutputDataBit(
+PIOA, GPIO_Pin_2)==0)
+..\Driver\LED.c(79): warning:  #223-D: function "GPIO_SetBits" declared implicitly
+  		GPIO_SetBits(GPIOA,GPIO_Pin_2);
+..\Driver\LED.c(83): warning:  #223-D: function "GPIO_ResetBits" declared implicitly
+  		GPIO_ResetBits(GPIOA,GPIO_Pin_2);
+..\Driver\LED.c: 13 warnings, 11 errors
+compiling IC.c...
+..\Driver\IC.c(5): warning:  #223-D: function "RCC_APB1PeriphClockCmd" declared implicitly
+  	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3,ENABLE);//开启TIM2时钟	
+..\Driver\IC.c(5): error:  #20: identifier "RCC_APB1Periph_TIM3" is undefined
+  	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3,ENABLE);//开启TIM2时钟	
+..\Driver\IC.c(6): warning:  #223-D: function "RCC_APB2PeriphClockCmd" declared implicitly
+  	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA,ENABLE);
+..\Driver\IC.c(6): error:  #20: identifier "RCC_APB2Periph_GPIOA" is undefined
+  	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA,ENABLE);
+..\Driver\IC.c(8): error:  #20: identifier "GPIO_InitTypeDef" is undefined
+  	GPIO_InitTypeDef GPIO_InitStructure; //结构体类型(已经定义好的） 结构体变量名 ->结构体变量的定义
+..\Driver\IC.c(9): error:  #20: identifier "GPIO_Speed_50MHz" is undefined
+  	GPIO_InitStructure.GPIO_Speed=GPIO_Speed_50MHz;
+..\Driver\IC.c(10): error:  #20: identifier "GPIO_Pin_6" is undefined
+  	GPIO_InitStructure.GPIO_Pin=GPIO_Pin_6;	
+..\Driver\IC.c(14): error:  #20: identifier "GPIO_Mode_IPU" is undefined
+  	GPIO_InitStructure.GPIO_Mode=GPIO_Mode_IPU;//上拉输入
+..\Driver\IC.c(15): warning:  #223-D: function "GPIO_Init" declared implicitly
+  	GPIO_Init(GPIOA,&GPIO_InitStructure);
+..\Driver\IC.c(18): warning:  #223-D: function "TIM_InternalClockConfig" declared implicitly
+  	TIM_InternalClockConfig(TIM3);//定时器上电后默认使用内部时钟,此语句也可以不写
+..\Driver\IC.c(20): error:  #20: identifier "TIM_TimeBaseInitTypeDef" is undefined
+  	TIM_TimeBaseInitTypeDef TIM_TimeBaseInitStructure;
+..\Driver\IC.c(21): error:  #20: identifier "TIM_CKD_DIV1" is undefined
+  	TIM_TimeBaseInitStructure.TIM_ClockDivision =  TIM_CKD_DIV1 ;//1分频
+..\Driver\IC.c(22): error:  #20: identifier "TIM_CounterMode_Up" is undefined
+  	TIM_TimeBaseInitStructure.TIM_CounterMode = TIM_CounterMode_Up;//向上计数
+..\Driver\IC.c(26): warning:  #223-D: function "TIM_TimeBaseInit" declared implicitly
+  	TIM_TimeBaseInit(TIM3,&TIM_TimeBaseInitStructure);//时基单元初始化
+..\Driver\IC.c(30): error:  #20: identifier "TIM_ICInitTypeDef" is undefined
+  	TIM_ICInitTypeDef TIM_ICInitStructure;
+..\Driver\IC.c(31): error:  #20: identifier "TIM_Channel_1" is undefined
+  	TIM_ICInitStructure.TIM_Channel=TIM_Channel_1;//输入捕获通道选择
+..\Driver\IC.c(33): error:  #20: identifier "TIM_ICPolarity_Rising" is undefined
+  	TIM_ICInitStructure.TIM_ICPolarity=TIM_ICPolarity_Rising;//极性，上升沿触发
+..\Driver\IC.c(34): error:  #20: identifier "TIM_ICPSC_DIV1" is undefined
+  	TIM_ICInitStructure.TIM_ICPrescaler=TIM_ICPSC_DIV1;//分频值
+..\Driver\IC.c(35): error:  #20: identifier "TIM_ICSelection_DirectTI" is undefined
+  	TIM_ICInitStructure.TIM_ICSelection=TIM_ICSelection_DirectTI;//选择从哪个引脚输入，直连通道输入
+..\Driver\IC.c(36): warning:  #223-D: function "TIM_ICInit" declared implicitly
+  	TIM_ICInit(TIM3,&TIM_ICInitStructure);
+..\Driver\IC.c(44): warning:  #223-D: function "TIM_PWMIConfig" declared implicitly
+  	TIM_PWMIConfig(TIM3,&TIM_ICInitStructure);//标准库中已将上述注释部分封装好,即会将以及配置号的部分，再配置另外的通道将参数进行相反的设置
+..\Driver\IC.c(47): warning:  #223-D: function "TIM_SelectInputTrigger" declared implicitly
+  	TIM_SelectInputTrigger(TIM3,TIM_TS_TI1FP1);//触发源选择
+..\Driver\IC.c(47): error:  #20: identifier "TIM_TS_TI1FP1" is undefined
+  	TIM_SelectInputTrigger(
+IM3,TIM_TS_TI1FP1);//触发源选择
+..\Driver\IC.c(48): warning:  #223-D: function "TIM_SelectSlaveMode" declared implicitly
+  	TIM_SelectSlaveMode(TIM3, TIM_SlaveMode_Reset);//配置从模式为RESET
+..\Driver\IC.c(48): error:  #20: identifier "TIM_SlaveMode_Reset" is undefined
+  	TIM_SelectSlaveMode(
+IM3, TIM_SlaveMode_Reset);//配置从模式为RESET
+..\Driver\IC.c(50): warning:  #223-D: function "TIM_Cmd" declared implicitly
+  	TIM_Cmd(TIM3, ENABLE);			//使能TIM2，定时器开始运行
+..\Driver\IC.c(56): warning:  #223-D: function "TIM_GetCapture1" declared implicitly
+  	return 1000000/ (TIM_GetCapture1(TIM3)+1);//每次计数会多1
+..\Driver\IC.c(61): warning:  #223-D: function "TIM_GetCapture2" declared implicitly
+  	return (TIM_GetCapture2(TIM3)+1)*100/(TIM_GetCapture1(TIM3)+1);//*100,因为原本的结果范围是百分比，即0-1,这里需要扩大100便于显示
+..\Driver\IC.c(61): warning:  #223-D: function "TIM_GetCapture1" declared implicitly
+  	return (TIM_GetCapture2(
+IM3)+1)*100/(TIM_GetCapture1(TIM3)+1);//*100,因为原本的结果范围是百分比，即0-1,这里需要扩大100便于显示
+..\Driver\IC.c(62): warning:  #1-D: last line of file ends without a newline
+  }
+..\Driver\IC.c: 14 warnings, 16 errors
+compiling PWM.c...
+..\Driver\PWM.c(5): warning:  #223-D: function "RCC_APB1PeriphClockCmd" declared implicitly
+  	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2,ENABLE);//开启TIM2时钟	
+..\Driver\PWM.c(5): error:  #20: identifier "RCC_APB1Periph_TIM2" is undefined
+  	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2,ENABLE);//开启TIM2时钟	
+..\Driver\PWM.c(6): warning:  #223-D: function "RCC_APB2PeriphClockCmd" declared implicitly
+  	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA,ENABLE);
+..\Driver\PWM.c(6): error:  #20: identifier "RCC_APB2Periph_GPIOA" is undefined
+  	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA,ENABLE);
+..\Driver\PWM.c(9): error:  #20: identifier "GPIO_InitTypeDef" is undefined
+  	GPIO_InitTypeDef GPIO_InitStructure; //结构体类型(已经定义好的） 结构体变量名 ->结构体变量的定义
+..\Driver\PWM.c(10): error:  #20: identifier "GPIO_Speed_50MHz" is undefined
+  	GPIO_InitStructure.GPIO_Speed=GPIO_Speed_50MHz;
+..\Driver\PWM.c(11): error:  #20: identifier "GPIO_Pin_2" is undefined
+  	GPIO_InitStructure.GPIO_Pin=GPIO_Pin_2;
+..\Driver\PWM.c(16): error:  #20: identifier "GPIO_Mode_AF_PP" is undefined
+  	GPIO_InitStructure.GPIO_Mode=GPIO_Mode_AF_PP;//复用开漏推挽输出
+..\Driver\PWM.c(17): warning:  #223-D: function "GPIO_Init" declared implicitly
+  	GPIO_Init(GPIOA,&GPIO_InitStructure);
+..\Driver\PWM.c(20): warning:  #223-D: function "TIM_InternalClockConfig" declared implicitly
+  	TIM_InternalClockConfig(TIM2);//定时器上电后默认使用内部时钟,此语句也可以不写
+..\Driver\PWM.c(22): error:  #20: identifier "TIM_TimeBaseInitTypeDef" is undefined
+  	TIM_TimeBaseInitTypeDef TIM_TimeBaseInitStructure;
+..\Driver\PWM.c(23): error:  #20: identifier "TIM_CKD_DIV1" is undefined
+  	TIM_TimeBaseInitStructure.TIM_ClockDivision =  TIM_CKD_DIV1 ;//1分频
+..\Driver\PWM.c(24): error:  #20: identifier "TIM_CounterMode_Up" is undefined
+  	TIM_TimeBaseInitStructure.TIM_CounterMode = TIM_CounterMode_Up;//向上计数
+..\Driver\PWM.c(29): warning:  #223-D: function "TIM_TimeBaseInit" declared implicitly
+  	TIM_TimeBaseInit(TIM2,&TIM_TimeBaseInitStructure);//时基单元初始化
+..\Driver\PWM.c(34): error:  #20: identifier "TIM_OCInitTypeDef" is undefined
+  	TIM_OCInitTypeDef TIM_OCInit_Structure;
+..\Driver\PWM.c(35): warning:  #223-D: function "TIM_OCStructInit" declared implicitly
+  	TIM_OCStructInit(&TIM_OCInit_Structure);//给结构体赋初始值
+..\Driver\PWM.c(36): error:  #20: identifier "TIM_OCMode_PWM1" is undefined
+  	TIM_OCInit_Structure.TIM_OCMode=TIM_OCMode_PWM1;//PWM模式1
+..\Driver\PWM.c(37): error:  #20: identifier "TIM_OCNPolarity_High" is undefined
+  	TIM_OCInit_Structure.TIM_OCPolarity=TIM_OCNPolarity_High;//高极性
+..\Driver\PWM.c(38): error:  #20: identifier "TIM_OutputState_Enable" is undefined
+  	TIM_OCInit_Structure.TIM_OutputState=TIM_OutputState_Enable;//输出使能
+..\Driver\PWM.c(40): warning:  #223-D: function "TIM_OC3Init" declared implicitly
+  	TIM_OC3Init(TIM2,&TIM_OCInit_Structure);//通道3初始化
+..\Driver\PWM.c(41): warning:  #223-D: function "TIM_Cmd" declared implicitly
+  	TIM_Cmd(TIM2,ENABLE);//启动定时器
+..\Driver\PWM.c(47): warning:  #223-D: function "RCC_APB1PeriphClockCmd" declared implicitly
+  	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2, ENABLE);			//开启TIM2的时钟
+..\Driver\PWM.c(47): error:  #20: identifier "RCC_APB1Periph_TIM2" is undefined
+  	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2, ENABLE);			//开启TIM2的时钟
+..\Driver\PWM.c(48): warning:  #223-D: function "RCC_APB2PeriphClockCmd" declared implicitly
+  	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);			//开启GPIOA的时钟
+..\Driver\PWM.c(48): error:  #20: identifier "RCC_APB2Periph_GPIOA" is undefined
+  	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);			//开启GPIOA的时钟
+..\Driver\PWM.c(56): error:  #20: identifier "GPIO_InitTypeDef" is undefined
+  	GPIO_InitTypeDef GPIO_InitStructure;
+..\Driver\PWM.c(57): error:  #20: identifier "GPIO_Mode_AF_PP" is undefined
+  	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;
+..\Driver\PWM.c(58): error:  #20: identifier "GPIO_Pin_0" is undefined
+  	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0;		//GPIO_Pin_15;
+..\Driver\PWM.c(59): error:  #20: identifier "GPIO_Speed_50MHz" is undefined
+  	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+..\Driver\PWM.c(60): warning:  #223-D: function "GPIO_Init" declared implicitly
+  	GPIO_Init(GPIOA, &GPIO_InitStructure);							//将PA0引脚初始化为复用推挽输出	
+..\Driver\PWM.c(64): warning:  #223-D: function "TIM_InternalClockConfig" declared implicitly
+  	TIM_InternalClockConfig(TIM2);		//选择TIM2为内部时钟，若不调用此函数，TIM默认也为内部时钟
+..\Driver\PWM.c(67): error:  #20: identifier "TIM_TimeBaseInitTypeDef" is undefined
+  	TIM_TimeBaseInitTypeDef TIM_TimeBaseInitStructure;				//定义结构体变量
+..\Driver\PWM.c(68): error:  #20: identifier "TIM_CKD_DIV1" is undefined
+  	TIM_TimeBaseInitStructure.TIM_ClockDivision = TIM_CKD_DIV1;     //时钟分频，选择不分频，此参数用于配置滤波器时钟，不影响时基单元功能
+..\Driver\PWM.c(69): error:  #20: identifier "TIM_CounterMode_Up" is undefined
+  	TIM_TimeBaseInitStructure.TIM_CounterMode = TIM_CounterMode_Up; //计数器模式，选择向上计数
+..\Driver\PWM.c(73): warning:  #223-D: function "TIM_TimeBaseInit" declared implicitly
+  	TIM_TimeBaseInit(TIM2, &TIM_TimeBaseInitStructure);             //将结构体变量交给TIM_TimeBaseInit，配置TIM2的时基单元
+..\Driver\PWM.c(76): error:  #20: identifier "TIM_OCInitTypeDef" is undefined
+  	TIM_OCInitTypeDef TIM_OCInitStructure;							//定义结构体变量
+..\Driver\PWM.c(77): warning:  #223-D: function "TIM_OCStructInit" declared implicitly
+  	TIM_OCStructInit(&TIM_OCInitStructure);							//结构体初始化，若结构体没有完整赋值
+..\Driver\PWM.c(80): error:  #20: identifier "TIM_OCMode_PWM1" is undefined
+  	TIM_OCInitStructure.TIM_OCMode = TIM_OCMode_PWM1;				//输出比较模式，选择PWM模式1
+..\Driver\PWM.c(81): error:  #20: identifier "TIM_OCPolarity_High" is undefined
+  	TIM_OCInitStructure.TIM_OCPolarity = TIM_OCPolarity_High;		//输出极性，选择为高，若选择极性为低，则输出高低电平取反
+..\Driver\PWM.c(82): error:  #20: identifier "TIM_OutputState_Enable" is undefined
+  	TIM_OCInitStructure.TIM_OutputState = TIM_OutputState_Enable;	//输出使能
+..\Driver\PWM.c(84): warning:  #223-D: function "TIM_OC1Init" declared implicitly
+  	TIM_OC1Init(TIM2, &TIM_OCInitStructure);						//将结构体变量交给TIM_OC1Init，配置TIM2的输出比较通道1
+..\Driver\PWM.c(87): warning:  #223-D: function "TIM_Cmd" declared implicitly
+  	TIM_Cmd(TIM2, ENABLE);			//使能TIM2，定时器开始运行
+..\Driver\PWM.c(98): warning:  #223-D: function "TIM_SetCompare1" declared implicitly
+  	TIM_SetCompare1(TIM2,Compare);
+..\Driver\PWM.c(103): warning:  #223-D: function "TIM_SetCompare3" declared implicitly
+  	TIM_SetCompare3(TIM2,Compare);
+..\Driver\PWM.c(113): warning:  #1-D: last line of file ends without a newline
+  */
+..\Driver\PWM.c: 19 warnings, 26 errors
+".\Objects\Turin.axf" - 109 Error(s), 90 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.STM32F1xx_DFP.2.2.0.pack
+                Keil.STM32F1xx_DFP.2.2.0
+                STMicroelectronics STM32F1 Series Device Support, Drivers and Examples
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\_Turin
+  D:\keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include
+
+<h2>Collection of Component Files used:</h2>
+Target not created.
+Build Time Elapsed:  00:00:02
+</pre>
+</body>
+</html>
